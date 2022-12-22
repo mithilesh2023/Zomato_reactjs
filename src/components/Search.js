@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Carts from './Carts';
 import Fooddata from './FoodData'
+import SkeletonCard from './SkeletonCard';
 const Search = () => {
 
     const [fdata, setFdata] = useState(Fooddata)
@@ -45,11 +46,12 @@ const Search = () => {
             <div className='pl-12'>
                 <h2 className='text-3xl '>Restaurent  in Ahmadabad Open Now</h2>
             </div>
-            <div className='justify-around flex items-center  '>
+            <div>
                 {
-                    copydata && copydata.length ? <Carts Fooddata={copydata}/>:''
+                    copydata && copydata.length ? <Carts Fooddata={copydata}/>:  <SkeletonCard sdata={fdata}/>
                 }
             </div>
+          
         </div>
     )
 
